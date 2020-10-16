@@ -20,7 +20,7 @@ world](https://www.relm.us).
 
 ## Live Demo
 
-See https://svelty.dev
+See https://sveltyjs.dev
 
 Open it up in multiple browsers!
 
