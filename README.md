@@ -18,6 +18,12 @@ At [Relm](https://github.com/relm-us), for example, we've been using it as the
 synchronization layer between participants in a [collaborative 3D
 world](https://www.relm.us). 
 
+## Live Demo
+
+See https://svelty.dev
+
+Open it up in multiple browsers!
+
 ## Getting Started
 
 Starting with a Svelte component:

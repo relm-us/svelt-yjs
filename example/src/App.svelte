@@ -16,7 +16,11 @@
 
   // Connect our Y.Doc to the sync server. Note that you could also use p2p
   // via webrtc (due to Yjs' CRDT convergence algorithm, no server necessary).
-  new WebsocketProvider('ws://localhost:5001', 'example', ydoc);
+  new WebsocketProvider(
+    `ws://${window.location.hostname}:5001`,
+    'example',
+    ydoc,
+  );
 
   // Create a Y.Array<string> in the Y.Doc
   const yarray = ydoc.getArray('list');
@@ -114,6 +118,7 @@
   <Header />
   <content>
     <Explanation />
+    <h2>Open this in another browser!</h2>
     <undo-panel>
       <button class="icon" on:click={() => undoManager.undo()}><img
           src={undoIcon}
