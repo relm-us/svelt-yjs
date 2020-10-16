@@ -1,6 +1,22 @@
 # Sveltyjs
 
-A bridge between [Svelte](https://svelte.dev) and [Yjs](https://yjs.dev). Easily wrap a readable store around a Yjs (CRDT) type.
+[Sveltyjs](https://github.com/relm-us/sveltyjs) is a library for your Svelte app
+that lets you build Svelte stores from Yjs types. Once connected to Yjs, your
+Svelte app gets transport-agnostic synchronization (e.g.
+[y-webrtc](https://github.com/yjs/y-webrtc),
+[y-websocket](https://github.com/yjs/y-websocket) ) across networks and
+undo/redo management basically for free.
+
+[Yjs](https://yjs.dev) is often thought of as a way to make collaborative text
+editing work in a browser, but its underlying technology is amenable to a
+variety of web use cases. We think [Svelte](https://svelte.dev) and Yjs are
+positioned to make collaborative,
+[local-first](https://www.inkandswitch.com/local-first.html) apps much easier to
+build.
+
+At [Relm](https://github.com/relm-us), for example, we've been using it as the
+synchronization layer between participants in a [collaborative 3D
+world](https://www.relm.us). 
 
 ## Getting Started
 
