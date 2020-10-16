@@ -1,23 +1,23 @@
 import * as Y from 'yjs';
-import { array } from '../src/main';
+import { map } from '../src/main';
 import { get } from 'svelte/store';
 import subscribeSkipInitial from '../util/subscribeSkipInitial';
 
-describe('array', () => {
+describe('map', () => {
   let ydoc: Y.Doc;
 
-  let yarray: Y.Array<string>;
+  let ymap: Y.Map<string>;
 
   let store;
 
   beforeEach(() => {
     ydoc = new Y.Doc();
-    yarray = ydoc.getArray('list');
-    store = array.readable(yarray);
+    ymap = ydoc.getMap('dict');
+    store = map.readable(ymap);
   });
 
   it('has an initial value', () => {
-    expect(get(store)).toEqual([]);
+    expect(get(store)).toEqual(new Map());
   });
 
   it('has a Y type', () => {
@@ -26,17 +26,17 @@ describe('array', () => {
 
   it('subscribes', (done) => {
     store.subscribe((value) => {
-      expect(value).toEqual([]);
+      expect(value).toEqual(new Map());
       done();
     });
   });
 
   it('subscribes and gets change', (done) => {
     subscribeSkipInitial(store, (value) => {
-      expect(value).toEqual(['hello']);
+      expect(value).toEqual(new Map([['greeting', 'hello']]));
       done();
     });
-    yarray.push(['hello']);
+    store.y.set('greeting', 'hello');
   });
 
   it('unsubscribes', (done) => {
@@ -46,32 +46,37 @@ describe('array', () => {
     unsub();
 
     subscribeSkipInitial(store, (value) => {
-      expect(value).toEqual(['hello']);
+      expect(value).toEqual(new Map([['hello', 'there']]));
       done();
     });
 
-    yarray.push(['hello']);
+    store.y.set('hello', 'there');
   });
 
-  it('can insert via y', (done) => {
-    store.y.insert(0, ['one', 'four']);
+  it('can set a key/value via y', (done) => {
+    store.y.set('one', '1');
 
     subscribeSkipInitial(store, (value) => {
-      expect(value).toEqual(['one', 'two', 'three', 'four']);
+      expect(value).toEqual(
+        new Map([
+          ['one', '1'],
+          ['two', '2'],
+        ]),
+      );
       done();
     });
 
-    store.y.insert(1, ['two', 'three']);
+    store.y.set('two', '2');
   });
 
-  it('can delete via y', (done) => {
-    store.y.insert(0, ['one', 'two', 'three']);
+  it('can delete a key/value via y', (done) => {
+    store.y.set('one', '1');
+    store.y.set('two', '2');
 
     subscribeSkipInitial(store, (value) => {
-      expect(value).toEqual(['one', 'three']);
-      done();
+      expect(value).toEqual(new Map([['one', '1']])), done();
     });
 
-    store.y.delete(1);
+    store.y.delete('two');
   });
 });
