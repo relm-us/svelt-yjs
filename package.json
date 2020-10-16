@@ -1,6 +1,6 @@
 {
   "name": "sveltyjs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "yjs bridge to Svelte",
   "author": "Duane Johnson <duane.johnson@gmail.com>",
   "license": "MIT",
@@ -18,7 +18,11 @@
   "bugs": {
     "url": "https://github.com/canadaduane/sveltyjs/issues"
   },
-  "main": "./out/extension.js", 
+  "main": "./build/src/main.js", 
+  "files": [
+    "src",
+    "build"
+  ],
   "engines": {
     "node": ">= 12.13 <13"
   },

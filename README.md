@@ -1,8 +1,3 @@
-[![TypeScript version][ts-badge]][typescript-4-0]
-[![Node.js version][nodejs-badge]][nodejs]
-[![MIT][license-badge]][license]
-[![Build Status - Travis][travis-badge]][travis-ci]
-
 # Sveltyjs
 
 A bridge between [Svelte](https://svelte.dev) and [Yjs](https://yjs.dev). Easily wrap a readable store around a Yjs (CRDT) type.
