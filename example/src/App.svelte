@@ -14,13 +14,13 @@
   // All Yjs types must be embedded in a Y.Doc
   const ydoc = new Y.Doc();
 
+  const wsUrl =
+    window.location.hostname === 'localhost'
+      ? 'ws://localhost:5001'
+      : 'wss://y.sveltyjs.dev';
   // Connect our Y.Doc to the sync server. Note that you could also use p2p
   // via webrtc (due to Yjs' CRDT convergence algorithm, no server necessary).
-  new WebsocketProvider(
-    `ws://${window.location.hostname}:5001`,
-    'example',
-    ydoc,
-  );
+  new WebsocketProvider(wsUrl, 'example', ydoc);
 
   // Create a Y.Array<string> in the Y.Doc
   const yarray = ydoc.getArray('list');
