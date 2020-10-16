@@ -22,7 +22,7 @@ world](https://www.relm.us).
 
 See https://sveltyjs.dev
 
-Open it up in multiple browsers!
+Open it up in multiple browsers at the same time!
 
 ## Getting Started
 

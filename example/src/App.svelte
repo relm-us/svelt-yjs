@@ -118,7 +118,7 @@
   <Header />
   <content>
     <Explanation />
-    <h2>Open this in another browser!</h2>
+    <h2>Open this in another tab, too!</h2>
     <undo-panel>
       <button class="icon" on:click={() => undoManager.undo()}><img
           src={undoIcon}
