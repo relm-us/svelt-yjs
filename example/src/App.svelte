@@ -8,8 +8,9 @@
 
   import animal from './animals';
 
-  import undoIcon from './undo.png';
-  import redoIcon from './redo.png';
+  import animalIcon from './images/animal.png';
+  import undoIcon from './images/undo.png';
+  import redoIcon from './images/redo.png';
 
   // All Yjs types must be embedded in a Y.Doc
   const ydoc = new Y.Doc();
@@ -59,22 +60,25 @@
     margin-bottom: 16px;
   }
   button.icon {
-    padding: 0;
-    padding-bottom: 8px;
-    border: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 8px 16px;
+    border: 1px solid var(--medium);
     border-radius: 5px;
     background-color: white;
     min-width: 64px;
   }
   button.icon:active {
-    background-color: var(--dark);
-    color: white;
+    background-color: var(--medium);
+    border: 1px solid var(--dark);
   }
   button.icon img {
     display: block;
     width: 24px;
     height: 24px;
-    margin: 16px 16px 8px 16px;
+    margin: 8px;
   }
   undo-panel {
     display: flex;
@@ -131,7 +135,10 @@
     <show-panel>
       <h2>Make an Animal</h2>
       <subtitle>(Y.Array)</subtitle>
-      <button on:click={() => list.y.push([animal()])}> Random Animal </button>
+      <button class="icon" on:click={() => list.y.push([animal()])}>
+        <img src={animalIcon} alt="paw print" />
+        Add a Random Animal
+      </button>
       <list>
         {#each $list as item, i}
           <row>
@@ -145,7 +152,10 @@
     <show-panel>
       <h2>Animal Count</h2>
       <subtitle>(Y.Map)</subtitle>
-      <button on:click={() => dict.y.set(animal(), 0)}> Random Animal </button>
+      <button class="icon" on:click={() => dict.y.set(animal(), 0)}>
+        <img src={animalIcon} alt="paw print" />
+        Add a Random Animal
+      </button>
       <list>
         {#each [...$dict] as [key, value]}
           <row>
