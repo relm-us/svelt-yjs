@@ -1,0 +1,42 @@
+{
+  "name": "sveltyjs",
+  "version": "0.1.0",
+  "description": "yjs bridge to Svelte",
+  "engines": {
+    "node": ">= 12.13 <13"
+  },
+  "devDependencies": {
+    "@types/jest": "~26.0.10",
+    "@types/node": "~12.12",
+    "@typescript-eslint/eslint-plugin": "~3.9.1",
+    "@typescript-eslint/parser": "~3.9.1",
+    "eslint": "~7.7.0",
+    "eslint-config-prettier": "~6.11.0",
+    "eslint-plugin-jest": "~23.20.0",
+    "jest": "~26.4.2",
+    "prettier": "~2.0.5",
+    "rimraf": "~3.0.2",
+    "svelte": "^3.29.0",
+    "ts-jest": "~26.2.0",
+    "tsutils": "~3.17.0",
+    "typescript": "~4.0.2"
+  },
+  "scripts": {
+    "clean": "rimraf coverage build tmp",
+    "build": "tsc -p tsconfig.release.json",
+    "build:watch": "tsc -w -p tsconfig.release.json",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "author": "Duane Johnson <duane.johnson@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tslib": "~2.0.1",
+    "yjs": "^13.4.1"
+  },
+  "volta": {
+    "node": "12.18.3",
+    "npm": "6.14.5"
+  }
+}
