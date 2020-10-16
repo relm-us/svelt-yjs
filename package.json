@@ -13,10 +13,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/canadaduane/sveltyjs.git"
+    "url": "git+https://github.com/relm-us/sveltyjs.git"
   },
   "bugs": {
-    "url": "https://github.com/canadaduane/sveltyjs/issues"
+    "url": "https://github.com/relm-us/sveltyjs/issues"
   },
   "main": "./build/src/main.js", 
   "files": [
