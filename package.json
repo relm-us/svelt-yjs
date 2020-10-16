@@ -1,6 +1,6 @@
 {
   "name": "sveltyjs",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "yjs bridge to Svelte",
   "author": "Duane Johnson <duane.johnson@gmail.com>",
   "license": "MIT",
