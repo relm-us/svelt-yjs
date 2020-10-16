@@ -1,7 +1,24 @@
 {
   "name": "sveltyjs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "yjs bridge to Svelte",
+  "author": "Duane Johnson <duane.johnson@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "svelte",
+    "yjs",
+    "store",
+    "reactive",
+    "crdt"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/canadaduane/sveltyjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/canadaduane/sveltyjs/issues"
+  },
+  "main": "./out/extension.js", 
   "engines": {
     "node": ">= 12.13 <13"
   },
@@ -29,8 +46,6 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
-  "author": "Duane Johnson <duane.johnson@gmail.com>",
-  "license": "MIT",
   "dependencies": {
     "tslib": "~2.0.1",
     "yjs": "^13.4.1"
