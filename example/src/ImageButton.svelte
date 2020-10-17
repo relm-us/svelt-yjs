@@ -3,6 +3,7 @@
 
   export let icon;
   export let alt;
+  export let disabled = false;
 
   const dispatch = createEventDispatcher();
 </script>
@@ -21,6 +22,9 @@
 
     margin: 8px;
   }
+  .disabled {
+    opacity: 0.5;
+  }
   button:active {
     background-color: var(--medium);
     border: 1px solid var(--dark);
@@ -33,7 +37,7 @@
   }
 </style>
 
-<button on:click={() => dispatch('click')}>
+<button class:disabled on:click={() => dispatch('click')}>
   <img src={icon} {alt} />
   <slot />
 </button>

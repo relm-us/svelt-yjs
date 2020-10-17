@@ -1,10 +1,14 @@
 <script>
   export let undoManager;
 
+  import { undo } from 'sveltyjs';
+
   import ImageButton from './ImageButton.svelte';
 
   import undoIcon from './images/undo.png';
   import redoIcon from './images/redo.png';
+
+  const undoStore = undo.readable(undoManager);
 </script>
 
 <style>
@@ -30,10 +34,18 @@
 </style>
 
 <panel>
-  <ImageButton icon={undoIcon} on:click={() => undoManager.undo()}>
+  <ImageButton
+    disabled={$undoStore.undoSize === 0}
+    icon={undoIcon}
+    on:click={() => undoManager.undo()}>
     Undo
+    {#if $undoStore.undoSize > 0}({$undoStore.undoSize}){/if}
   </ImageButton>
-  <ImageButton icon={redoIcon} on:click={() => undoManager.redo()}>
+  <ImageButton
+    disabled={$undoStore.redoSize === 0}
+    icon={redoIcon}
+    on:click={() => undoManager.redo()}>
     Redo
+    {#if $undoStore.redoSize > 0}({$undoStore.redoSize}){/if}
   </ImageButton>
 </panel>
