@@ -46,8 +46,17 @@
     border-left: 2px solid var(--dark);
     border-right: 2px solid var(--dark);
   }
-  h2 {
+  action,
+  subaction {
+    display: block;
+    margin: 0 32px;
+  }
+  subaction ul {
+    margin: 8px 0;
+  }
+  action {
     text-align: center;
+    font-size: 150%;
     color: var(--punch);
     margin: 16px auto 0 auto;
   }
@@ -58,7 +67,14 @@
   <content>
     <Explanation />
 
-    <h2>Open this in another tab, too!</h2>
+    <action>Try it out</action>
+    <subaction>
+      See what happens when:
+      <ul>
+        <li>you open this in another tab, then add animals!</li>
+        <li>you go offline, do stuff, then re-connect!</li>
+      </ul>
+    </subaction>
 
     <UndoPanel {undoManager} />
 

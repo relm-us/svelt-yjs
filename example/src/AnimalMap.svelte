@@ -5,6 +5,7 @@
 
   import Row from './Row.svelte';
   import Item from './Item.svelte';
+  import Button from './Button.svelte';
   import ImageButton from './ImageButton.svelte';
   import ShowPanel from './ShowPanel.svelte';
 
@@ -20,17 +21,19 @@
   </ImageButton>
   {#each [...$map] as [key, value]}
     <Row>
-      <button on:click={() => map.y.delete(key)}>remove</button>
+      <Button on:click={() => map.y.delete(key)}>remove</Button>
       <Item {key} {value} />
       <div style="float:right">
-        <button on:click={() => map.y.set(key, map.y.get(key) + 1)}>+</button>
-        <button
+        <Button on:click={() => map.y.set(key, map.y.get(key) + 1)}>+</Button>
+        <Button
           on:click={() => {
             const value = map.y.get(key);
             if (value > 0) {
               map.y.set(key, value - 1);
             }
-          }}>-</button>
+          }}>
+          -
+        </Button>
       </div>
     </Row>
   {/each}

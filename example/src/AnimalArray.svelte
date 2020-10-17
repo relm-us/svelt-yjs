@@ -5,6 +5,7 @@
 
   import Row from './Row.svelte';
   import Item from './Item.svelte';
+  import Button from './Button.svelte';
   import ImageButton from './ImageButton.svelte';
   import ShowPanel from './ShowPanel.svelte';
 
@@ -20,7 +21,7 @@
   </ImageButton>
   {#each $array as item, i}
     <Row>
-      <button on:click={() => array.y.delete(i)}>remove</button>
+      <Button on:click={() => array.y.delete(i)}>remove</Button>
       <Item value={item} />
     </Row>
   {/each}
