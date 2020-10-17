@@ -24,6 +24,8 @@ See https://sveltyjs.dev
 
 Open it up in multiple browsers at the same time!
 
+Note: the source code for the Live Demo is in the `example/` folder.
+
 ## Getting Started
 
 Starting with a Svelte component:
