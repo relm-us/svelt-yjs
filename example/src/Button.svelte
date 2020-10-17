@@ -1,9 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte';
 
-  export let icon;
-  export let alt;
-
   const dispatch = createEventDispatcher();
 </script>
 

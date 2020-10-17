@@ -27,11 +27,11 @@
   <para>
     <a href="https://github.com/relm-us/sveltyjs">Sveltyjs</a>
     is a library for your Svelte app that lets you build Svelte stores from Yjs
-    types. Once connected to Yjs, your Svelte app gets transport-agnostic
-    synchronization (e.g.
+    types. When built on the client-side Yjs library, your Svelte app gets
+    transport-agnostic synchronization across networks (e.g.
     <a href="https://github.com/yjs/y-webrtc">y-webrtc</a>,
-    <a href="https://github.com/yjs/y-websocket">y-websocket</a>
-    ) across networks and undo/redo management basically for free.
+    <a href="https://github.com/yjs/y-websocket">y-websocket</a>, etc.) and
+    undo/redo management basically for free.
   </para>
   <para>
     <a href="https://yjs.dev">Yjs</a>
