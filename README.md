@@ -1,8 +1,8 @@
 # Sveltyjs
 
 [Sveltyjs](https://github.com/relm-us/sveltyjs) is a library for your Svelte app
-that lets you build Svelte stores from Yjs types. Once connected to Yjs, your
-Svelte app gets transport-agnostic synchronization (e.g.
+that lets you build Svelte stores from Yjs types. When built on the client-side Yjs
+library, your Svelte app gets transport-agnostic synchronization (e.g.
 [y-webrtc](https://github.com/yjs/y-webrtc),
 [y-websocket](https://github.com/yjs/y-websocket) ) across networks and
 undo/redo management basically for free.
