@@ -30,7 +30,7 @@
 <heading>
   <subtitle>
     Combining the
-    <em>reactive power of Svelte</em>
+    <em>reactivity of Svelte</em>
     with<br />
     the local-first, distributed
     <em class="punch">synchronization of Yjs</em>.

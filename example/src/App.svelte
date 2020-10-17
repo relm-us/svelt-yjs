@@ -51,14 +51,17 @@
     display: block;
     margin: 0 32px;
   }
-  subaction ul {
-    margin: 8px 0;
-  }
   action {
     text-align: center;
     font-size: 150%;
     color: var(--punch);
-    margin: 16px auto 0 auto;
+    margin: 48px auto 0 auto;
+  }
+  subaction {
+    margin-bottom: 48px;
+  }
+  subaction ul {
+    margin: 8px 0;
   }
 </style>
 
