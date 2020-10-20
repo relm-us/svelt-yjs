@@ -12,7 +12,7 @@
   import animalIcon from './images/animal.png';
 </script>
 
-<ShowPanel title="Animal Count" subtitle="(Y.Array)">
+<ShowPanel title="Animal Count" subtitle="(Y.Map)">
   <ImageButton
     icon={animalIcon}
     alt="paw print"
