@@ -3,13 +3,14 @@
     display: block;
     background-color: var(--medium);
     padding: 16px;
-    padding-top: 212px;
+    padding-top: 110px;
     border-radius: 5px;
     transform: scale(1.1);
-    background-image: url(/sveltyjs-logo.png);
-    background-size: 400px 186px;
+    background-image: url(/svelt-yjs-logo.png);
+    /* background-size: 400px 186px; */
+    background-size: 275px 64px;
     background-repeat: no-repeat;
-    background-position: center 26px;
+    background-position: center 34px;
   }
   subtitle {
     display: block;
