@@ -1,7 +1,7 @@
 <script>
   export let undoManager;
 
-  import { undo } from 'sveltyjs';
+  import { undo } from 'svelt-yjs';
 
   import ImageButton from './ImageButton.svelte';
 

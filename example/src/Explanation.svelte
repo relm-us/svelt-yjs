@@ -19,13 +19,13 @@
 
 <explanation-panel>
   <div class="center" style="margin-top:24px">
-    <a href="https://github.com/relm-us/sveltyjs">
+    <a href="https://github.com/relm-us/svelt-yjs">
       <img width="32" src="/github-logo.svg" alt="github" />
       <div style="color:black">Get Svelt-yjs</div>
     </a>
   </div>
   <para>
-    <a href="https://github.com/relm-us/sveltyjs">Svelt-yjs</a>
+    <a href="https://github.com/relm-us/svelt-yjs">Svelt-yjs</a>
     is a library for your Svelte app that lets you build Svelte stores from Yjs
     types. When built on the client-side Yjs library, your Svelte app gets
     transport-agnostic synchronization across networks (e.g.

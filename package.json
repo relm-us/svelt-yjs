@@ -1,5 +1,5 @@
 {
-  "name": "sveltyjs",
+  "name": "svelt-yjs",
   "version": "0.2.0",
   "description": "yjs bridge to Svelte",
   "author": "Duane Johnson <duane.johnson@gmail.com>",
@@ -13,10 +13,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/relm-us/sveltyjs.git"
+    "url": "git+https://github.com/relm-us/svelt-yjs.git"
   },
   "bugs": {
-    "url": "https://github.com/relm-us/sveltyjs/issues"
+    "url": "https://github.com/relm-us/svelt-yjs/issues"
   },
   "main": "./build/src/main.js",
   "files": [

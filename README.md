@@ -1,6 +1,6 @@
-# Sveltyjs
+# Svelt-yjs
 
-[Sveltyjs](https://github.com/relm-us/sveltyjs) is a library for your Svelte app
+[Svelt-yjs](https://github.com/relm-us/svelt-yjs) is a library for your Svelte app
 that lets you build Svelte stores from Yjs types. When built on the client-side Yjs
 library, your Svelte app gets transport-agnostic synchronization (e.g.
 [y-webrtc](https://github.com/yjs/y-webrtc),
@@ -20,7 +20,7 @@ world](https://www.relm.us).
 
 ## Live Demo
 
-See https://sveltyjs.dev
+See https://svelt-yjs.dev
 
 Open it up in multiple browsers at the same time!
 
@@ -32,7 +32,7 @@ Starting with a Svelte component:
 
 ```svelte
 <script lang="ts">
-  import { array, map } from 'sveltyjs'
+  import { array, map } from 'svelt-yjs'
   import * as Y from 'yjs'
 
   // All Yjs types must be embedded in a Y.Doc

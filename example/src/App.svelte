@@ -1,7 +1,7 @@
 <script>
   import * as Y from 'yjs';
   import { WebsocketProvider } from 'y-websocket';
-  import { array, map } from 'sveltyjs';
+  import { array, map } from 'svelt-yjs';
 
   import Header from './Header.svelte';
   import Explanation from './Explanation.svelte';
@@ -15,7 +15,7 @@
   const wsUrl =
     window.location.hostname === 'localhost'
       ? 'ws://localhost:5001'
-      : 'wss://y.sveltyjs.dev';
+      : 'wss://y.svelt-yjs.dev';
   // Connect our Y.Doc to the sync server. Note that you could also use p2p
   // via webrtc (due to Yjs' CRDT convergence algorithm, no server necessary).
   new WebsocketProvider(wsUrl, 'example', ydoc);

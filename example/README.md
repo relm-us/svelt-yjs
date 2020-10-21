@@ -1,6 +1,6 @@
-# Sveltyjs Example App
+# Svelt-yjs Example App
 
-An example of using a distributed, offline-first undo/redo stack powered by Yjs in conjunction with Svelte components [sveltyjs](https://github.com/canadaduane/sveltyjs)
+An example of using a distributed, offline-first undo/redo stack powered by Yjs in conjunction with Svelte components [svelt-yjs](https://github.com/relm-us/svelt-yjs)
 
 ## Get started
 
@@ -17,4 +17,4 @@ yarn install
 yarn dev
 ```
 
-Navigate to [localhost:5000](http://localhost:5000). You should see the Sveltyjs example app running.
+Navigate to [localhost:5000](http://localhost:5000). You should see the Svelt-yjs example app running.
