@@ -10,15 +10,37 @@
   import ShowPanel from './ShowPanel.svelte';
 
   import animalIcon from './images/animal.png';
+  import resetIcon from './images/reset.png';
 </script>
 
+<style>
+  spacer {
+    width: 80px;
+  }
+  buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+</style>
+
 <ShowPanel title="Animal Count" subtitle="(Y.Map)">
-  <ImageButton
-    icon={animalIcon}
-    alt="paw print"
-    on:click={() => map.y.set(animal(), 0)}>
-    Add an Animal to the List
-  </ImageButton>
+  <buttons>
+    <spacer />
+    <ImageButton
+      icon={animalIcon}
+      alt="paw print"
+      on:click={() => map.y.set(animal(), 0)}>
+      Add an Animal
+    </ImageButton>
+
+    <ImageButton
+      icon={resetIcon}
+      alt="paw print"
+      on:click={() => map.y.forEach((value, key) => map.y.delete(key))}>
+      Reset
+    </ImageButton>
+  </buttons>
   {#each [...$map] as [key, value]}
     <Row>
       <Button on:click={() => map.y.delete(key)}>remove</Button>

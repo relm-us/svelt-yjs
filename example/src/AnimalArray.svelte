@@ -10,15 +10,37 @@
   import ShowPanel from './ShowPanel.svelte';
 
   import animalIcon from './images/animal.png';
+  import resetIcon from './images/reset.png';
 </script>
 
+<style>
+  spacer {
+    width: 80px;
+  }
+  buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+</style>
+
 <ShowPanel title="Animal List" subtitle="(Y.Array)">
-  <ImageButton
-    icon={animalIcon}
-    alt="paw print"
-    on:click={() => array.y.push([animal()])}>
-    Add an Animal to the List
-  </ImageButton>
+  <buttons>
+    <spacer />
+    <ImageButton
+      icon={animalIcon}
+      alt="paw print"
+      on:click={() => array.y.push([animal()])}>
+      Add an Animal
+    </ImageButton>
+
+    <ImageButton
+      icon={resetIcon}
+      alt="paw print"
+      on:click={() => array.y.delete(0, array.y.length)}>
+      Reset
+    </ImageButton>
+  </buttons>
   {#each $array as item, i}
     <Row>
       <Button on:click={() => array.y.delete(i)}>remove</Button>
