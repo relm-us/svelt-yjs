@@ -1,6 +1,6 @@
 {
   "name": "svelt-yjs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "yjs bridge to Svelte",
   "author": "Duane Johnson <duane.johnson@gmail.com>",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "build"
   ],
   "engines": {
-    "node": ">= 12.13 <13"
+    "node": ">= 10.0"
   },
   "devDependencies": {
     "@types/jest": "~26.0.10",
