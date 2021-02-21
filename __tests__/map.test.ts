@@ -1,5 +1,5 @@
 import * as Y from 'yjs';
-import { map } from '../src/main';
+import { readableMap } from '../src/main';
 import { get } from 'svelte/store';
 import subscribeSkipInitial from '../util/subscribeSkipInitial';
 
@@ -13,7 +13,7 @@ describe('map', () => {
   beforeEach(() => {
     ydoc = new Y.Doc();
     ymap = ydoc.getMap('dict');
-    store = map.readable(ymap);
+    store = readableMap(ymap);
   });
 
   it('has an initial value', () => {

@@ -1,3 +1,3 @@
-export * as array from './types/array';
-export * as map from './types/map';
-export * as undo from './undo';
+export { readableMap, YReadableMap } from './types/map';
+export { readableArray, YReadableArray } from './types/array';
+export { readableUndo, YReadableUndo } from './undo';

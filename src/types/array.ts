@@ -1,6 +1,9 @@
 import type * as Y from 'yjs';
+import { Readable } from './Readable';
 
-function readable<T>(arr: Y.Array<T>) {
+export type YReadableArray<T> = Readable<Array<T>> & { y: Y.Array<T> };
+
+export function readableArray<T>(arr: Y.Array<T>): YReadableArray<T> {
   let value: Array<T> = arr.toArray();
   let subs = [];
 
@@ -40,5 +43,3 @@ function readable<T>(arr: Y.Array<T>) {
 
   return { subscribe, y: arr };
 }
-
-export { readable };

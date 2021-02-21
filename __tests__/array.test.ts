@@ -1,5 +1,5 @@
 import * as Y from 'yjs';
-import { array } from '../src/main';
+import { readableArray } from '../src/main';
 import { get } from 'svelte/store';
 import subscribeSkipInitial from '../util/subscribeSkipInitial';
 
@@ -13,7 +13,7 @@ describe('array', () => {
   beforeEach(() => {
     ydoc = new Y.Doc();
     yarray = ydoc.getArray('list');
-    store = array.readable(yarray);
+    store = readableArray(yarray);
   });
 
   it('has an initial value', () => {

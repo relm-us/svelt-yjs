@@ -1,8 +1,10 @@
 import * as Y from 'yjs';
-import { readable as svelteReadable } from 'svelte/store';
+import { readable, Readable } from 'svelte/store';
 
-function readable(undoManager: Y.UndoManager) {
-  const stackCount = svelteReadable({ undoSize: 0, redoSize: 0 }, (set) => {
+export type YReadableUndo = Readable<{ undoSize: number; redoSize: number }>;
+
+export function readableUndo(undoManager: Y.UndoManager): YReadableUndo {
+  const stackCount = readable({ undoSize: 0, redoSize: 0 }, (set) => {
     let undoSize = 0;
     let redoSize = 0;
 
@@ -32,5 +34,3 @@ function readable(undoManager: Y.UndoManager) {
 
   return stackCount;
 }
-
-export { readable };

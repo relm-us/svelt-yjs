@@ -1,6 +1,10 @@
 import type * as Y from 'yjs';
 
-function readable<T>(map: Y.Map<T>) {
+import { Readable } from './Readable';
+
+export type YReadableMap<T> = Readable<Map<string, T>> & { y: Y.Map<T> };
+
+export function readableMap<T>(map: Y.Map<T>): YReadableMap<T> {
   let value: Map<string, T> = new Map(Object.entries(map.toJSON()));
   let subs = [];
 
@@ -40,5 +44,3 @@ function readable<T>(map: Y.Map<T>) {
 
   return { subscribe, y: map };
 }
-
-export { readable };

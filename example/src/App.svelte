@@ -1,7 +1,7 @@
 <script>
   import * as Y from 'yjs';
   import { WebsocketProvider } from 'y-websocket';
-  import { array, map } from 'svelt-yjs';
+  import { readableArray, readableMap } from 'svelt-yjs';
 
   import Header from './Header.svelte';
   import Explanation from './Explanation.svelte';
@@ -27,14 +27,36 @@
   const ymap = ydoc.getMap('dict');
 
   // Generate two Svelte readable stores from the Y types we just added to the Y.Doc
-  const list = array.readable(yarray);
-  const dict = map.readable(ymap);
+  const list = readableArray(yarray);
+  const dict = readableMap(ymap);
 
   // Add undo/redo manager
   const undoManager = new Y.UndoManager([list.y, dict.y], {
     captureTimeout: 0,
   });
 </script>
+
+<page>
+  <Header />
+  <content>
+    <Explanation />
+
+    <action>Try it out</action>
+    <subaction>
+      See what happens when:
+      <ul>
+        <li>you open this in another tab, then add animals!</li>
+        <li>you go offline, do stuff, then re-connect!</li>
+      </ul>
+    </subaction>
+
+    <UndoPanel {undoManager} />
+
+    <AnimalArray array={list} />
+
+    <AnimalMap map={dict} />
+  </content>
+</page>
 
 <style>
   page {
@@ -64,25 +86,3 @@
     margin: 8px 0;
   }
 </style>
-
-<page>
-  <Header />
-  <content>
-    <Explanation />
-
-    <action>Try it out</action>
-    <subaction>
-      See what happens when:
-      <ul>
-        <li>you open this in another tab, then add animals!</li>
-        <li>you go offline, do stuff, then re-connect!</li>
-      </ul>
-    </subaction>
-
-    <UndoPanel {undoManager} />
-
-    <AnimalArray array={list} />
-
-    <AnimalMap map={dict} />
-  </content>
-</page>
