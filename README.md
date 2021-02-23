@@ -32,7 +32,7 @@ Starting with a Svelte component:
 
 ```svelte
 <script lang="ts">
-  import { array, map } from 'svelt-yjs'
+  import { readableArray } from 'svelt-yjs'
   import * as Y from 'yjs'
 
   // All Yjs types must be embedded in a Y.Doc
@@ -42,7 +42,7 @@ Starting with a Svelte component:
   const yarray: Y.Array<string> = ydoc.getArray('list')
 
   // Generate a Svelte readable store from the Y.Array
-  const list = array.readable(yarray)
+  const list = readableArray(yarray)
 
   // The store has a `y` object that references `yarray`
   // Note: The following is identical to `yarray.push(['one', 'two', 'three'])`
