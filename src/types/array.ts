@@ -1,5 +1,5 @@
 import type * as Y from 'yjs';
-import { Readable } from './Readable';
+import { Readable, Subscriber, Unsubscriber } from './Readable';
 
 export type YReadableArray<T> = Readable<Array<T>> & { y: Y.Array<T> };
 
@@ -16,15 +16,17 @@ export function readableArray<T>(arr: Y.Array<T>): YReadableArray<T> {
     subs.forEach((sub) => sub(value));
   };
 
-  const observer = (event, _transaction) => {
+  const observer = (event: Y.YArrayEvent<T>, _transaction) => {
     const target = event.target as Y.Array<T>;
     setValue(target.toArray());
   };
 
-  const subscribe = (handler) => {
+  const subscribe = (handler: Subscriber<Array<T>>): Unsubscriber => {
     subs = [...subs, handler];
 
     if (subs.length === 1) {
+      // update current value to latest that yjs has since we haven't been observing
+      value = arr.toArray();
       // set an observer to call all handlers whenever there is a change
       arr.observe(observer);
     }

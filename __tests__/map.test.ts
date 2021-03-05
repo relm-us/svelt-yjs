@@ -74,7 +74,8 @@ describe('map', () => {
     store.y.set('two', '2');
 
     subscribeSkipInitial(store, (value) => {
-      expect(value).toEqual(new Map([['one', '1']])), done();
+      expect(value).toEqual(new Map([['one', '1']]));
+      done();
     });
 
     store.y.delete('two');
