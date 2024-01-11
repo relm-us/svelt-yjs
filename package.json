@@ -19,8 +19,8 @@
     "url": "https://github.com/relm-us/svelt-yjs/issues"
   },
   "main": "./build/src/main.js",
+  "types": "./build/src/main.d.ts",
   "files": [
-    "src",
     "build"
   ],
   "engines": {
@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "tslib": "~2.0.1",
-    "yjs": "^13.4.1"
+    "yjs": "^13.6.10"
   },
   "volta": {
     "node": "12.18.3",
